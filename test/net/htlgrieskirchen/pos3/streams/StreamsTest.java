@@ -119,37 +119,37 @@ public class StreamsTest {
         assertEquals(expResult, result);
     }
 
-//    /**
-//     * Test of toNameList method, of class Streams.
-//     */
-//    @Test
-//    public void testToNameList() {
-//        System.out.println("toNameList");
-//        Streams instance = new Streams();
-//        List<String> expResult = new LinkedList<>();
-//        expResult.add("Varscona");
-//        expResult.add("Tuigan Bow");
-//        expResult.add("Crom Faeyr");
-//        expResult.add("Broken Weapon");
-//        expResult.add("Carsomyr");
-//        expResult.add("Flail of Ages");
-//        expResult.add("Boomerang Dagger");
-//        expResult.add("Dagger of Venom");
-//        expResult.add("Heartseeker");
-//        expResult.add("Strong Arm");
-//        expResult.add("Kundane");
-//        expResult.add("The Burning Earth");
-//        expResult.add("Daystar");
-//        expResult.add("Long Sword +1");
-//        expResult.add("Long Sword +1");
-//        expResult.add("Long Sword +1");
-//        List<String> result = instance.toNameList(weapons);
-//        assertEquals(expResult, result);
-//    }
-//
-//    /**
-//     * Test of toSpeedArray method, of class Streams.
-//     */
+    /**
+     * Test of toNameList method, of class Streams.
+     */
+    @Test
+    public void testToNameList() {
+        System.out.println("toNameList");
+        Streams instance = new Streams();
+        List<String> expResult = new LinkedList<>();
+        expResult.add("Varscona");
+        expResult.add("Tuigan Bow");
+        expResult.add("Crom Faeyr");
+        expResult.add("Broken Weapon");
+        expResult.add("Carsomyr");
+        expResult.add("Flail of Ages");
+        expResult.add("Boomerang Dagger");
+        expResult.add("Dagger of Venom");
+        expResult.add("Heartseeker");
+        expResult.add("Strong Arm");
+        expResult.add("Kundane");
+        expResult.add("The Burning Earth");
+        expResult.add("Daystar");
+        expResult.add("Long Sword +1");
+        expResult.add("Long Sword +1");
+        expResult.add("Long Sword +1");
+        List<String> result = instance.toNameList(weapons);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of toSpeedArray method, of class Streams.
+     */
 //    @Test
 //    public void testToSpeedArray() {
 //        System.out.println("toSpeedArray");
@@ -158,19 +158,19 @@ public class StreamsTest {
 //        int[] result = instance.toSpeedArray(weapons);
 //        assertArrayEquals(expResult, result);
 //    }
-//
-//    /**
-//     * Test of sumUpValues method, of class Streams.
-//     */
-//    @Test
-//    public void testSumUpValues() {
-//        System.out.println("sumUpValues");
-//        Streams instance = new Streams();
-//        int expResult = 97050;
-//        int result = instance.sumUpValues(weapons);
-//        assertEquals(expResult, result);
-//    }
-//
+
+    /**
+     * Test of sumUpValues method, of class Streams.
+     */
+    @Test
+    public void testSumUpValues() {
+        System.out.println("sumUpValues");
+        Streams instance = new Streams();
+        int expResult = 97050;
+        int result = instance.sumUpValues(weapons);
+        assertEquals(expResult, result);
+    }
+
 //    /**
 //     * Test of sumUpHashCodes method, of class Streams.
 //     */
@@ -199,22 +199,22 @@ public class StreamsTest {
 //        List<Weapon> result = instance.removeDuplicates(weapons);
 //        assertEquals(expResult, result);
 //    }
-//
-//    /**
-//     * Test of increaseValuesByTenPercent method, of class Streams.
-//     */
-//    @Test
-//    public void testIncreaseValuesByTenPercent() throws IOException {
-//        System.out.println("increaseValuesByTenPercent");
-//        Streams instance = new Streams();
-//        int expResult = 106755;
-//        instance.increaseValuesByTenPercent(weapons);
-//        int result = 0;
-//        result = weapons.stream()
-//                .map((w) -> w.getValue())
-//                .reduce(result, Integer::sum);
-//        assertEquals(expResult, result);
-//    }
+
+    /**
+     * Test of increaseValuesByTenPercent method, of class Streams.
+     */
+    @Test
+    public void testIncreaseValuesByTenPercent() throws IOException {
+        System.out.println("increaseValuesByTenPercent");
+        Streams instance = new Streams();
+        int expResult = 106755;
+        instance.increaseValuesByTenPercent(weapons);
+        int result = 0;
+        result = weapons.stream()
+                .map((w) -> w.getValue())
+                .reduce(result, Integer::sum);
+        assertEquals(expResult, result);
+    }
 
     private List<Weapon> readFile(String file) throws IOException {
         return Files.lines(new File(file).toPath())

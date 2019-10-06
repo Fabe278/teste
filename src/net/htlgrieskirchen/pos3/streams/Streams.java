@@ -36,18 +36,19 @@ public class Streams {
     
     public List<String> toNameList(List<Weapon> weapons) {
         List<String> namesList = new LinkedList<>();
-        
+        weapons.stream().forEach(a -> namesList.add(a.getName()));
         return namesList;
     }
     
     public int[] toSpeedArray(List<Weapon> weapons) {
+        int[] speedarr = new int[weapons.size()];
+//        speedarr = weapons.stream().map(a -> a.getSpeed()).toArray();
         return null;
-        //implement this
     }
     
     public int sumUpValues(List<Weapon> weapons) {
-        return 0;
-        //implement this
+        int zahl = weapons.stream().mapToInt(a -> a.getValue()).sum();
+        return zahl;
     }
     
     public long sumUpHashCodes(List<Weapon> weapons) {
@@ -61,6 +62,6 @@ public class Streams {
     }
     
     public void increaseValuesByTenPercent(List<Weapon> weapons) {
-       //implement this
+       weapons.stream().map(a -> a.getValue()*1.1).forEach(System.out::println);
     }
 }

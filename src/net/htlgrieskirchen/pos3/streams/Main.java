@@ -36,8 +36,6 @@ public class Main {
 
         weapons = main.readCSV("weapons.csv");
 //        System.out.println(weapons);
-        System.out.println(streams.findWeaponWithLowestDamage(weapons));
-        System.out.println(weapons.get(3));
     }
     
     public int[] generateNumbers(){

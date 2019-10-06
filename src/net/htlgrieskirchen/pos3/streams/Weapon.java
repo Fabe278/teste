@@ -56,15 +56,54 @@ public class Weapon {
 
     @Override
     public int hashCode() {
-        return 0;
-        //implement this
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.combatType);
+        hash = 37 * hash + Objects.hashCode(this.damageType);
+        hash = 37 * hash + this.damage;
+        hash = 37 * hash + this.speed;
+        hash = 37 * hash + this.minStrength;
+        hash = 37 * hash + this.value;
+        return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return false;
-        //implement this
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Weapon other = (Weapon) obj;
+        if (this.damage != other.damage) {
+            return false;
+        }
+        if (this.speed != other.speed) {
+            return false;
+        }
+        if (this.minStrength != other.minStrength) {
+            return false;
+        }
+        if (this.value != other.value) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.combatType != other.combatType) {
+            return false;
+        }
+        if (this.damageType != other.damageType) {
+            return false;
+        }
+        return true;
     }
+
+    
 
     @Override
     public String toString() {
